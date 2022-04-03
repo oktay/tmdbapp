@@ -6,6 +6,7 @@ export { default as ChevronRight } from './ChevronRight';
 export { default as ChevronUp } from './ChevronUp';
 export { default as Clock } from './Clock';
 export { default as Close } from './Close';
+export { default as ExclamationCircle } from './ExclamationCircle';
 export { default as Expand } from './Expand';
 export { default as Gallery } from './Gallery';
 export { default as Home } from './Home';

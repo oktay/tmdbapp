@@ -1,13 +1,14 @@
 import React from 'react';
 import {
-  ChakraProvider, Heading,
+  ChakraProvider,
 } from '@chakra-ui/react';
 import theme from './lib/theme';
+import Carousel from './components/hero/carousel';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Heading>Hello World</Heading>
+      <Carousel />
     </ChakraProvider>
   );
 }
