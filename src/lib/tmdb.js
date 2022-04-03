@@ -47,3 +47,8 @@ export function useParams(params = {}) {
 
   return [searchParams.toString(), searchParams];
 }
+
+export function useImage({ path, size}) {
+  const url = [process.env.REACT_APP_TMDB_CDN, size ? `w${size}` : 'original', path].join('/')
+  return [url]
+}
