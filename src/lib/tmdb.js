@@ -26,6 +26,7 @@ export function useApi({ path, params }) {
       if (data.status_code) {
         setError(data);
       } else {
+        setError(null);
         setResponse(data)
       }
 
