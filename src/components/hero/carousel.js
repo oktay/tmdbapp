@@ -31,7 +31,7 @@ function Carousel() {
             w="full"
             justifyContent="center"
             alignItems="center"
-            bg="gray.200"
+            bgColor="#2D2D2D"
           >
             {error ? (
               <Stack alignItems="center" color="gray.500">
@@ -39,7 +39,7 @@ function Carousel() {
                 <Text>{error.status_message}</Text>
               </Stack>
             ) : (
-              <Spinner color="gray.500" size="xl" />
+              <Spinner color="#1D1D1D" size="xl" />
             )}
           </Flex>
         </AspectRatio>
