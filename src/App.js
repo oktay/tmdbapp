@@ -1,14 +1,18 @@
-import React from 'react';
 import {
   ChakraProvider,
 } from '@chakra-ui/react';
+import { Route, Routes } from 'react-router-dom';
 import theme from './lib/theme';
-import Carousel from './components/hero/carousel';
+import Navigation from './components/layout/navigation';
+import HomeView from './components/views/home';
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Carousel />
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+      </Routes>
     </ChakraProvider>
   );
 }
