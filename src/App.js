@@ -4,7 +4,7 @@ import {
 import { Route, Routes } from 'react-router-dom';
 import theme from './lib/theme';
 import Navigation from './components/layout/navigation';
-import HomeView from './components/views/home';
+import HomeView from './views/home';
 
 function App() {
   return (

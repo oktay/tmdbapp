@@ -1,5 +1,5 @@
 import { Stack } from "@chakra-ui/react";
-import Carousel from "../hero/carousel";
+import Carousel from "../components/hero/carousel";
 
 function HomeView() {
   return (
