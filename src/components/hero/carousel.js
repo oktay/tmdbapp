@@ -15,9 +15,12 @@ import { EffectFade, Navigation, Pagination } from 'swiper';
 import { useApi } from '../../lib/tmdb';
 import Slide from './slide';
 import { ChevronLeft, ChevronRight, ExclamationCircle } from '../icons';
+import { useState } from 'react';
 
 function Carousel() {
   const { loading, error, response } = useApi({ path: 'movie/now_playing' });
+  const [current, setCurrent] = useState(1)
+  const [total, setTotal] = useState(1)
 
   return (
     <Box position="relative">
@@ -56,6 +59,13 @@ function Carousel() {
               currentClass: 'swiper-pagination-current',
               totalClass: 'swiper-pagination-total',
             }}
+            onSwiper={swiper => {
+              setCurrent(swiper.activeIndex + 1);
+              setTotal(swiper.slides.length);
+            }}
+            onSlideChange={swiper => {
+              setCurrent(swiper.activeIndex + 1);
+            }}
           >
             {response.results.map(result => (
               <SwiperSlide key={result.id}>
@@ -73,12 +83,13 @@ function Carousel() {
             <IconButton
               className="swiper-button-prev"
               position="absolute"
-              left="0"
+              left={{ md:"14" }}
               top="0"
               h="full"
               size="lg"
               fontSize="4xl"
-              zIndex="overlay"
+              zIndex="docked"
+              rounded="none"
               icon={<ChevronLeft />}
             />
             <IconButton
@@ -89,20 +100,24 @@ function Carousel() {
               h="full"
               size="lg"
               fontSize="4xl"
-              zIndex="overlay"
+              zIndex="docked"
+              rounded="none"
               icon={<ChevronRight />}
             />
           </ButtonGroup>
-          <HStack>
-            <Box
-              position="absolute"
-              bottom="4"
-              left="50%!important"
-              transform="translateX(-50%)"
-              zIndex="overlay"
-            >
+          <HStack
+            position="absolute"
+            bottom="4"
+            left="50%!important"
+            transform="translateX(-50%)"
+            zIndex="overlay"
+            color="white"
+          >
+            <Text>{current}</Text>
+            <Box>
               <Box className="swiper-pagination" />
             </Box>
+            <Text>{total}</Text>
           </HStack>
         </Box>
       )}

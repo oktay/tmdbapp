@@ -44,18 +44,33 @@ function Slide({ image, imageDesktop, title, description, rate }) {
         left="0"
         width="100%"
         height="100%"
-        alignItems="center"
-        px={{ base: '10', lg: '48' }}
+        px={{ base: '10', md: '32', lg: '48' }}
         py={{ base: '2', lg: '16' }}
+        flexDir={{ base: 'column', lg: 'row' }}
+        alignItems={{ base: 'center', md: 'flex-start', lg: 'center' }}
+        justifyContent={{ base: 'center', lg: 'flex-start' }}
       >
-        <AspectRatio ratio={2/3} w="250px" mr="16" display={{ base: 'none', md: 'block' }}>
+        <AspectRatio
+          ratio={2 / 3}
+          w="250px"
+          mr={{ md: '4', lg: '16' }}
+          mb={{ md: '8' }}
+          display={{ base: 'none', md: 'block' }}
+        >
           <Skeleton isLoaded={posterLoaded}>
-            <Image src={img} onLoad={() => setPosterLoaded(true)} width="full" height="full" />
+            <Image
+              src={img}
+              onLoad={() => setPosterLoaded(true)}
+              width="full"
+              height="full"
+            />
           </Skeleton>
         </AspectRatio>
         <Stack spacing="6">
           <Rating rate={rate} />
-          <Heading size="2xl" fontWeight="medium">{title}</Heading>
+          <Heading size="2xl" fontWeight="medium">
+            {title}
+          </Heading>
           <Text maxW="md" noOfLines={4}>
             {description}
           </Text>

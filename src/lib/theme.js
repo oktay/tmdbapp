@@ -1,13 +1,16 @@
 import { extendTheme } from "@chakra-ui/react"
 
 const globalStyles = {
+  'html, body': {
+    bg: '#1D1D1D',
+  },
   '.swiper-slide:not(.swiper-slide-active)': {
     opacity: 0,
   },
   '.swiper-pagination-progressbar': {
     display: 'block',
     position: 'relative',
-    width: '320px',
+    width: '280px',
     height: '8px',
     background: 'hsla(0, 0%, 100%, 0.3)',
   },
