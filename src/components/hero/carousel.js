@@ -113,11 +113,11 @@ function Carousel() {
             zIndex="overlay"
             color="white"
           >
-            <Text>{current}</Text>
+            <Text>{current < 10 ? current.toString().padStart(2, '0') : current}</Text>
             <Box>
               <Box className="swiper-pagination" />
             </Box>
-            <Text>{total}</Text>
+            <Text>{total < 10 ? total.toString().padStart(2, '0') : total}</Text>
           </HStack>
         </Box>
       )}
