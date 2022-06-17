@@ -46,8 +46,8 @@ function Slide({ image, imageDesktop, title, description, rate }) {
         height="100%"
         px={{ base: '10', md: '32', lg: '48' }}
         py={{ base: '2', lg: '16' }}
-        flexDir={{ base: 'column', lg: 'row' }}
-        alignItems={{ base: 'center', md: 'flex-start', lg: 'center' }}
+        flexDir={{ base: 'column', md: 'row' }}
+        alignItems="center"
         justifyContent={{ base: 'center', lg: 'flex-start' }}
       >
         <AspectRatio
