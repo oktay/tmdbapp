@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import movieGenres from './data/movieGenres.json';
+import tvGenres from './data/tvGenres.json';
 
 export function useApi({ path, params }) {
   const [response, setResponse] = useState(null);
@@ -52,4 +54,9 @@ export function useParams(params = {}) {
 export function useImage({ path, size}) {
   const url = [process.env.REACT_APP_TMDB_CDN, size ? `w${size}` : 'original', path].join('/')
   return [url]
+}
+
+export function useGenre({ type, ids }) {
+  const { genres } = type === 'movie' ? movieGenres : tvGenres;
+  return genres.filter(({ id }) => ids.includes(id)).map(({ name }) => name);
 }
