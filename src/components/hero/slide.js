@@ -67,7 +67,9 @@ function Slide({ image, imageDesktop, title, description, rate }) {
           <Text maxW="md" noOfLines={4}>
             {description}
           </Text>
-          <Button size="lg" px="24">See Details</Button>
+          <Button size="lg" px="24">
+            See Details
+          </Button>
         </Stack>
       </Flex>
     </Box>

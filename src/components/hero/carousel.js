@@ -19,8 +19,8 @@ import { useState } from 'react';
 
 function Carousel() {
   const { loading, error, response } = useApi({ path: 'movie/now_playing' });
-  const [current, setCurrent] = useState(1)
-  const [total, setTotal] = useState(1)
+  const [current, setCurrent] = useState(1);
+  const [total, setTotal] = useState(1);
 
   return (
     <Box position="relative">
@@ -83,7 +83,7 @@ function Carousel() {
             <IconButton
               className="swiper-button-prev"
               position="absolute"
-              left={{ md:"14" }}
+              left={{ md: '14' }}
               top="0"
               h="full"
               size="lg"
@@ -113,11 +113,15 @@ function Carousel() {
             zIndex="overlay"
             color="white"
           >
-            <Text>{current < 10 ? current.toString().padStart(2, '0') : current}</Text>
+            <Text>
+              {current < 10 ? current.toString().padStart(2, '0') : current}
+            </Text>
             <Box>
               <Box className="swiper-pagination" />
             </Box>
-            <Text>{total < 10 ? total.toString().padStart(2, '0') : total}</Text>
+            <Text>
+              {total < 10 ? total.toString().padStart(2, '0') : total}
+            </Text>
           </HStack>
         </Box>
       )}

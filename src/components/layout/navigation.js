@@ -42,7 +42,7 @@ function Navigation() {
       <Stack
         alignItems="center"
         as="nav"
-        spacing={{ base: "4", md: "16" }}
+        spacing={{ base: '4', md: '16' }}
         px={{ base: '2', md: '0' }}
         py={{ base: '0', md: '8' }}
         direction={{ base: 'row', md: 'column' }}

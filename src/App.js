@@ -1,6 +1,4 @@
-import {
-  ChakraProvider,
-} from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { Route, Routes } from 'react-router-dom';
 import theme from './lib/theme';
 import Navigation from './components/layout/navigation';

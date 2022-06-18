@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import movieGenres from './data/movieGenres.json';
 import tvGenres from './data/tvGenres.json';
 
@@ -9,12 +9,10 @@ export function useApi({ path, params }) {
 
   useEffect(() => {
     async function fetchData() {
-      const url = new URL(
-        [process.env.REACT_APP_TMDB_API_URL, path].join('/')
-      );
+      const url = new URL([process.env.REACT_APP_TMDB_API_URL, path].join('/'));
 
       if (params) {
-        params.split('&').forEach((param) => {
+        params.split('&').forEach(param => {
           const [key, value] = param.split('=');
           url.searchParams.append(key, value);
         });
@@ -29,7 +27,7 @@ export function useApi({ path, params }) {
         setError(data);
       } else {
         setError(null);
-        setResponse(data)
+        setResponse(data);
       }
 
       setLoading(false);
@@ -44,16 +42,20 @@ export function useApi({ path, params }) {
 export function useParams(params = {}) {
   const searchParams = new URLSearchParams();
 
-  Object.keys(params).forEach(function(key) {
-    searchParams.append(key, params[key])
+  Object.keys(params).forEach(function (key) {
+    searchParams.append(key, params[key]);
   });
 
   return [searchParams.toString(), searchParams];
 }
 
-export function useImage({ path, size}) {
-  const url = [process.env.REACT_APP_TMDB_CDN, size ? `w${size}` : 'original', path].join('/')
-  return [url]
+export function useImage({ path, size }) {
+  const url = [
+    process.env.REACT_APP_TMDB_CDN,
+    size ? `w${size}` : 'original',
+    path,
+  ].join('/');
+  return [url];
 }
 
 export function useGenre({ type, ids }) {

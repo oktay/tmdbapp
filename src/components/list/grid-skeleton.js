@@ -7,7 +7,12 @@ function GridSkeleton() {
     .fill({})
     .map((_, index) => (
       <AspectRatio ratio={2 / 3} key={index}>
-        <Skeleton width="full" height="full" startColor="#2D2D2D" endColor="#1D1D1D" />
+        <Skeleton
+          width="full"
+          height="full"
+          startColor="#2D2D2D"
+          endColor="#1D1D1D"
+        />
       </AspectRatio>
     ));
 }

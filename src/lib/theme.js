@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme } from '@chakra-ui/react';
 
 const globalStyles = {
   'html, body': {
@@ -23,13 +23,13 @@ const globalStyles = {
     height: '8px',
     background: 'hsla(0, 0%, 100%, 1);',
     transformOrigin: 'left',
-  }
-}
+  },
+};
 
 const components = {
   Button: {
     baseStyle: {
-      rounded: 'full'
+      rounded: 'full',
     },
     variants: {
       solid: {
@@ -39,30 +39,29 @@ const components = {
         },
         _active: {
           bgColor: '#E10856',
-        }
+        },
       },
       outline: {
         borderColor: '#E10856',
         _hover: {
           bgColor: 'rgba(44, 44, 44, 0.2)',
-        }
-      }
-    }
+        },
+      },
+    },
   },
   Badge: {
     baseStyle: {
       rounded: 'full',
       px: '2',
-    }
-  }
-}
+    },
+  },
+};
 
 const theme = extendTheme({
   styles: {
     global: globalStyles,
   },
   components,
-})
+});
 
-export default theme
-  
+export default theme;

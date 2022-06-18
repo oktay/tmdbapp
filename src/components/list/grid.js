@@ -14,7 +14,10 @@ function ContentGrid({ loading, results }) {
       gap="8"
     >
       {loading && <GridSkeleton />}
-      {!loading && results.map((content, index) => <Card key={content?.id ?? index} {...content} />)}
+      {!loading &&
+        results.map((content, index) => (
+          <Card key={content?.id ?? index} {...content} />
+        ))}
     </Grid>
   );
 }
