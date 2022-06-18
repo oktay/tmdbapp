@@ -9,7 +9,7 @@ function HomeView() {
   return (
     <Stack spacing="0" color="white">
       <Carousel />
-      <Box pl="14">
+      <Box pl={{ md: "14" }}>
         <Heading pl="8" my="8" size="md">Trending Movies</Heading>
         <ContentGrid loading={loading} error={error} results={response?.results ?? []} />
       </Box>
