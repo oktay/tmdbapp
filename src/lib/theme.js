@@ -49,6 +49,12 @@ const components = {
       }
     }
   },
+  Badge: {
+    baseStyle: {
+      rounded: 'full',
+      px: '2',
+    }
+  }
 }
 
 const theme = extendTheme({
