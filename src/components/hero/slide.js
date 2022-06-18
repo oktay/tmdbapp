@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {
   AspectRatio,
   Box,
+  Button,
   Flex,
   Heading,
   Image,
@@ -66,7 +67,7 @@ function Slide({ image, imageDesktop, title, description, rate }) {
             />
           </Skeleton>
         </AspectRatio>
-        <Stack spacing="6">
+        <Stack spacing="6" alignItems="flex-start">
           <Rating rate={rate} />
           <Heading size="2xl" fontWeight="medium">
             {title}
@@ -74,6 +75,7 @@ function Slide({ image, imageDesktop, title, description, rate }) {
           <Text maxW="md" noOfLines={4}>
             {description}
           </Text>
+          <Button size="lg" px="24">See Details</Button>
         </Stack>
       </Flex>
     </Box>

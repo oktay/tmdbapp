@@ -26,10 +26,36 @@ const globalStyles = {
   }
 }
 
+const components = {
+  Button: {
+    baseStyle: {
+      rounded: 'full'
+    },
+    variants: {
+      solid: {
+        bgColor: '#E10856',
+        _hover: {
+          bgColor: '#BA104D',
+        },
+        _active: {
+          bgColor: '#E10856',
+        }
+      },
+      outline: {
+        borderColor: '#E10856',
+        _hover: {
+          bgColor: 'rgba(44, 44, 44, 0.2)',
+        }
+      }
+    }
+  },
+}
+
 const theme = extendTheme({
   styles: {
     global: globalStyles,
-  }
+  },
+  components,
 })
 
 export default theme
