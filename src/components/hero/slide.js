@@ -13,20 +13,20 @@ import {
 } from '@chakra-ui/react';
 import { useImage } from '../../lib/tmdb';
 import Rating from '../card/rating';
+import Poster from '../card/poster';
 
 function Slide({ image, imageDesktop, title, description, rate }) {
-  const [img] = useImage({ path: image });
   const [imgDesktop] = useImage({ path: imageDesktop });
+  const [imgMobile] = useImage({ path: image, size: '780' });
   const [bgLoaded, setBgLoaded] = useState(false);
-  const [posterLoaded, setPosterLoaded] = useState(false);
-  const src = useBreakpointValue({ base: img, md: imgDesktop });
+  const background = useBreakpointValue({ base: imgMobile, md: imgDesktop });
 
   return (
     <Box position="relative">
       <AspectRatio ratio={{ base: 2 / 3, lg: 3 / 2 }} maxH="80vh">
         <Skeleton isLoaded={bgLoaded}>
           <Image
-            src={src}
+            src={background}
             onLoad={() => setBgLoaded(true)}
             width="100%"
             height="100%"
@@ -51,25 +51,17 @@ function Slide({ image, imageDesktop, title, description, rate }) {
         alignItems="center"
         justifyContent={{ base: 'center', lg: 'flex-start' }}
       >
-        <AspectRatio
-          ratio={2 / 3}
+        <Box
           w="250px"
           mr={{ md: '4', lg: '16' }}
           mb={{ md: '8' }}
           display={{ base: 'none', md: 'block' }}
         >
-          <Skeleton isLoaded={posterLoaded}>
-            <Image
-              src={img}
-              onLoad={() => setPosterLoaded(true)}
-              width="full"
-              height="full"
-            />
-          </Skeleton>
-        </AspectRatio>
+          <Poster path={image} />
+        </Box>
         <Stack spacing="6" alignItems="flex-start">
           <Rating rate={rate} />
-          <Heading size="2xl" fontWeight="medium">
+          <Heading fontSize={{ md: 'xl', lg: '4xl' }} fontWeight="medium">
             {title}
           </Heading>
           <Text maxW="md" noOfLines={4}>
