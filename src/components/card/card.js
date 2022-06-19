@@ -13,6 +13,7 @@ function Card({
   release_date,
   vote_average,
   genre_ids,
+  big
 }) {
   const genres = useGenre({ type: title ? 'movie' : 'tv', ids: genre_ids });
 
@@ -33,7 +34,7 @@ function Card({
             {genres[0]}
           </Badge>
           <Rating rate={vote_average} />
-          <Heading size="sm">{title || name}</Heading>
+          <Heading size={big ? "lg" : "sm"}>{title || name}</Heading>
         </Stack>
       </Flex>
     </Box>
