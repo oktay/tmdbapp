@@ -11,7 +11,7 @@ function Navigation() {
     },
     {
       label: 'Movies',
-      link: '/movies',
+      link: '/movie',
       icon: <Movie />,
     },
     {
