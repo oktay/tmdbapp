@@ -14,8 +14,9 @@ import {
 import { useImage } from '../../lib/tmdb';
 import Rating from '../card/rating';
 import Poster from '../card/poster';
+import { Link } from 'react-router-dom';
 
-function Slide({ image, imageDesktop, title, description, rate }) {
+function Slide({ id, image, imageDesktop, title, description, rate }) {
   const [imgDesktop] = useImage({ path: imageDesktop });
   const [imgMobile] = useImage({ path: image, size: '780' });
   const [bgLoaded, setBgLoaded] = useState(false);
@@ -36,8 +37,8 @@ function Slide({ image, imageDesktop, title, description, rate }) {
         </Skeleton>
       </AspectRatio>
       <Flex
-        as="a"
-        href="/detail"
+        as={Link}
+        to={['detail', id].join('/')}
         bg="blackAlpha.700"
         color="white"
         position="absolute"

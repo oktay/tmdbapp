@@ -75,6 +75,7 @@ function Carousel() {
                   title={result.title}
                   description={result.overview}
                   rate={result.vote_average}
+                  id={result.id}
                 />
               </SwiperSlide>
             ))}
