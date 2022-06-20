@@ -18,6 +18,7 @@ function HomeView() {
           loading={loading}
           error={error}
           results={response?.results ?? []}
+          gap={{ base: '0', md: '8' }}
         />
         <Heading pl="8" my="8" size="md">
           Trending TV Shows

@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/movie" element={<ListView title="Movies" />} />
-        <Route path="/tv" element={<ListView title="TV Shows" bigCards={true} />} />
+        <Route path="/tv" element={<ListView title="TV Shows" />} />
       </Routes>
     </ChakraProvider>
   );
