@@ -22,7 +22,7 @@ function Card({
       <Poster path={poster_path} />
       <Flex
         as={Link}
-        to={['detail', id].join('/')}
+        to={['/detail', id].join('/')}
         position="absolute"
         inset="0"
         alignItems="flex-end"

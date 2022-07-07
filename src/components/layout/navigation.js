@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Flex, IconButton, Stack, Text } from '@chakra-ui/react';
-import { Home, Movie, StarStroke, Tv } from '../icons';
+import { Home, Movie, Search, StarStroke, Tv } from '../icons';
 
 function Navigation() {
   const links = [
@@ -23,6 +23,11 @@ function Navigation() {
       label: 'Starred',
       link: '/starred',
       icon: <StarStroke />,
+    },
+    {
+      label: 'Search',
+      link: '/search/movie',
+      icon: <Search />,
     },
   ];
 

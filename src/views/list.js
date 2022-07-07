@@ -2,6 +2,7 @@ import { Heading, Stack } from '@chakra-ui/react';
 import { useLocation } from 'react-router-dom';
 import { useApi, useParams } from '../lib/tmdb';
 import ContentGrid from '../components/list/grid';
+import Pagination from '../components/list/pagination';
 
 function ListView({ title, bigCards }) {
   const { pathname, search } = useLocation();
@@ -33,6 +34,7 @@ function ListView({ title, bigCards }) {
         bigCards={bigCards}
         gap={{ base: '0', md: '8' }}
       />
+      <Pagination pages={response?.total_pages} page={response?.page} />
     </Stack>
   );
 }
