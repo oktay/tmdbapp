@@ -57,7 +57,12 @@ const components = {
   },
 };
 
+const config = {
+  initialColorMode: 'dark',
+}
+
 const theme = extendTheme({
+  config,
   styles: {
     global: globalStyles,
   },
