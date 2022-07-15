@@ -21,6 +21,7 @@ function Slide({ id, image, imageDesktop, title, description, rate }) {
   const [imgMobile] = useImage({ path: image, size: '780' });
   const [bgLoaded, setBgLoaded] = useState(false);
   const background = useBreakpointValue({ base: imgMobile, md: imgDesktop });
+  const type = title ? 'movie' : 'tv';
 
   return (
     <Box position="relative">
@@ -38,7 +39,7 @@ function Slide({ id, image, imageDesktop, title, description, rate }) {
       </AspectRatio>
       <Flex
         as={Link}
-        to={['detail', id].join('/')}
+        to={['detail', type, id].join('/')}
         bg="blackAlpha.700"
         color="white"
         position="absolute"
@@ -57,6 +58,7 @@ function Slide({ id, image, imageDesktop, title, description, rate }) {
           mr={{ md: '4', lg: '16' }}
           mb={{ md: '8' }}
           display={{ base: 'none', md: 'block' }}
+          flexShrink="0"
         >
           <Poster path={image} />
         </Box>

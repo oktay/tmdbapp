@@ -15,14 +15,15 @@ function Card({
   genre_ids,
   big
 }) {
-  const genres = useGenre({ type: title ? 'movie' : 'tv', ids: genre_ids });
+  const type = title ? 'movie' : 'tv'
+  const genres = useGenre({ type, ids: genre_ids });
 
   return (
     <Box position="relative">
       <Poster path={poster_path} />
       <Flex
         as={Link}
-        to={['/detail', id].join('/')}
+        to={['/detail', type, id].join('/')}
         position="absolute"
         inset="0"
         alignItems="flex-end"
